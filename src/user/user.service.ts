@@ -33,6 +33,10 @@ export class UserService {
     return this.userRepository.findOne({ where: { id } });
   }
 
+  findByEmail(email:string){
+    return this.userRepository.findOne({ where: {email}})
+  }
+
   // delete a user
   async delete(userId: number): Promise<void> {
     await this.userRepository.delete(userId);
